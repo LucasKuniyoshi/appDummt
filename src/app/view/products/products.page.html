@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      UniShop 
+      <ion-icon name="pricetags-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar animated="true" [(ngModel)] ="searchTerm" (ionChange)="search()"></ion-searchbar>
+
+  <ion-list>
+    <ion-item button *ngFor = "let breed of filteredBreeds" [routerLink]="['/', 'product-details', breed.id]">
+      <ion-avatar slot="start">
+        <img [src]="breed.thumbnail" *ngIf="breed.thumbnail != 'N/A'">
+      </ion-avatar>
+      <ion-label text-wrap>
+        <h3>{{breed.title}}</h3>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!--<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>Unishop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar animated="true" [(ngModel)]="searchTerm" (ionChange)="search()"></ion-searchbar>
+  <ion-item>
+    <ion-label interface="popover">Selecione o Produto</ion-label>
+    <ion-select [(ngModel)]="category" (ionChange)="search()">
+      <ion-select-option value="">Produtos</ion-select-option>
+      <ion-select-option value="smartphones">smartphones</ion-select-option>
+      <ion-select-option value="laptops">laptops</ion-select-option>
+      <ion-select-option value="fragrances">fragancias</ion-select-option>
+      <ion-select-option value="skincare">skincare</ion-select-option>
+      <ion-select-option value="groceries">groceries</ion-select-option>
+      <ion-select-option value="home_decoration">home-decoration</ion-select-option>
+      <ion-select-option value="furniture">furniture</ion-select-option>
+      <ion-select-option value="tops">tops</ion-select-option>
+      <ion-select-option value="womens_dresses">womens-dresses</ion-select-option>
+      <ion-select-option value="womens_shoes">womens-shoes</ion-select-option>
+      <ion-select-option value="womens_watches">womens-watches</ion-select-option>
+      <ion-select-option value="womens_bags">womens-bags</ion-select-option>
+      <ion-select-option value="womens_jewellery">womens-watches</ion-select-option>
+      <ion-select-option value="mens_shirts">mens_shirts</ion-select-option>
+      <ion-select-option value="mens_shoes">mens_shoes</ion-select-option>
+      <ion-select-option value="mens_watches">mens_watches</ion-select-option>
+      <ion-select-option value="sunglasses">sunglasses</ion-select-option>
+      <ion-select-option value="automotive">automotive</ion-select-option>
+      <ion-select-option value="motorcycle">motorcycle</ion-select-option>
+      <ion-select-option value="lightning">lightning</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-item button *ngFor="let item of (result | async)"[routerLink]="['', 'product-details', item.id]">
+      <ion-avatar slot="start">
+        <img [src]="item.thumbnail" *ngIf="item.thumbnail != 'N/A'">
+      </ion-avatar>
+      
+      <ion-label text-wrap>
+        <h3>{{item.title}}</h3> {{item.brand}} interpolação
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>-->

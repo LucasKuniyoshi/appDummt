@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <!--botao de voltar-->
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title >{{info?.category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="info">
+    <ion-card-header>
+      <ion-card-subtitle>{{info.brand}}</ion-card-subtitle>
+      <ion-card-title>{{info.title}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
