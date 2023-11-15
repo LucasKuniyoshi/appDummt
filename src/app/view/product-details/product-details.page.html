@@ -16,6 +16,24 @@
     </ion-card-header>
 
     <ion-card-content>
+      <img [src]="info.images[1]">
+      {{info.description}}
     </ion-card-content>
+
+    <ion-item lines="none">
+      <ion-icon name="cash-outline" slot="start"></ion-icon> 
+      <ion-label>{{info.price}} $</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="logo-buffer" slot="start"></ion-icon>
+      <ion-label>{{info.stock}} un</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon [src]="" name="pricetag-outline" slot="start"></ion-icon>
+      <ion-label>{{info.discountPercentage}} %</ion-label>
+    </ion-item>
+
   </ion-card>
 </ion-content>

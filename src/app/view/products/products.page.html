@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
+  <ion-toolbar slot="center" color="tertiary">
     <ion-title>
       UniShop 
       <ion-icon name="pricetags-outline"></ion-icon>
@@ -11,13 +11,14 @@
   <ion-searchbar animated="true" [(ngModel)] ="searchTerm" (ionChange)="search()"></ion-searchbar>
 
   <ion-list>
-    <ion-item button *ngFor = "let breed of filteredBreeds" [routerLink]="['/', 'product-details', breed.id]">
+    <ion-item class="dis" *ngFor = "let breed of filteredBreeds" [routerLink]="['/', 'product-details', breed.id]">
       <ion-avatar slot="start">
         <img [src]="breed.thumbnail" *ngIf="breed.thumbnail != 'N/A'">
       </ion-avatar>
       <ion-label text-wrap>
         <h3>{{breed.title}}</h3>
       </ion-label>
+      <ion-icon slot="end" *ngIf="breed.category =='smartphones'" name="phone-potrait-outline"></ion-icon>
 
     </ion-item>
   </ion-list>
