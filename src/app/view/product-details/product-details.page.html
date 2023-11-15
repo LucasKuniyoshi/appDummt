@@ -16,7 +16,18 @@
     </ion-card-header>
 
     <ion-card-content>
-      <img [src]="info.images[1]">
+      <swiper-container keyboard="true" space-between="30" pagination="true" pagination-clickable="true"
+      navigation="false">
+        <swiper-slide>
+          <img [src]="info.images[1]">
+        </swiper-slide>
+        <swiper-slide>
+          <img [src]="info.images[2]">
+        </swiper-slide>
+        <swiper-slide>
+          <img [src]="info.images[3]">
+        </swiper-slide>
+      </swiper-container>
       {{info.description}}
     </ion-card-content>
 
@@ -34,6 +45,5 @@
       <ion-icon [src]="" name="pricetag-outline" slot="start"></ion-icon>
       <ion-label>{{info.discountPercentage}} %</ion-label>
     </ion-item>
-
   </ion-card>
 </ion-content>

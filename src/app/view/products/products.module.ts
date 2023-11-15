@@ -15,10 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     ProductsPageRoutingModule,
-    HttpClientModule,
-    
-    
+    HttpClientModule    
   ],
-  declarations: [ProductsPage]
+  declarations: [ProductsPage],
 })
 export class ProductsPageModule {}
