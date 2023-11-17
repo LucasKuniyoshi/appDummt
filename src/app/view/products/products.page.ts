@@ -8,9 +8,6 @@ import { DummyService, SearchCategory } from 'src/app/services/dummy.service';
   styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
-  //result! : Observable<any>;
-  //searchTerms : string = '';
-  //category : SearchCategory = SearchCategory.all;
 
   searchTerm: string = '';
   results: any[] = [];
@@ -23,11 +20,6 @@ export class ProductsPage implements OnInit {
       breed.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
-
-  //search(){
-  //  this.result = this.dummy.getAll(this.searchTerms/*, this.category*/)
-  //  .pipe(map(results => results['Search']));
-  //}
 
   ngOnInit() {
     this.dummy.getAll().subscribe((data) => {
