@@ -1,3 +1,7 @@
-.dis{
-    display : inline;
+:root{
+    --ion-color-cor : pink;
+}
+
+.ion-color-cor{
+    --ion-color-base :var(--ion-color-cor);
 }

@@ -8,18 +8,18 @@ import { DummyService, SearchCategory } from 'src/app/services/dummy.service';
   styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
-  result! : Observable<any>;
-  searchTerms : string = '';
-  category : SearchCategory = SearchCategory.all;
+  //result! : Observable<any>;
+  //searchTerms : string = '';
+  //category : SearchCategory = SearchCategory.all;
 
   searchTerm: string = '';
-  breeds: any[] = [];
-  filteredBreeds: any[] = [];
+  results: any[] = [];
+  categories: any[] = [];
 
   constructor(private dummy : DummyService) { }
 
   search() {
-    this.filteredBreeds = this.breeds.filter((breed) =>
+    this.categories = this.results.filter((breed) =>
       breed.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
@@ -31,8 +31,8 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     this.dummy.getAll().subscribe((data) => {
-      this.breeds = data;
-      this.filteredBreeds = data;
+      this.results = data;
+      this.categories = data;
     });
   }
 
